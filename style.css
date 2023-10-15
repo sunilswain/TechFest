@@ -106,7 +106,8 @@ nav > ul > li > a {
 .small-cards {
     display: flex;
     justify-content: space-around;
-    margin: 30px 0px;
+    margin: 30px 40px;
+
 }
 
 .small-cards > h1 {
@@ -133,18 +134,25 @@ nav > ul > li > a {
     flex-direction: column;
     margin: 40px;
     align-items: center;
+
+	.show-button {
+		text-decoration: none;
+		color: white;
+	}
 }
 .contests h1 {
     font-size: 70px;
 }
 .contests table th, td {
+	display: table-cell;
     box-shadow: 0 0.2px white;
     text-align: left;
-    padding: 10px;
-    
+	transition: 1s;
+	padding: 0 30px;
 }
-
-
+.contest-table {
+	padding: 0 40px;
+}
 /* Prizes Section*/
 .prizes {
     display: flex;

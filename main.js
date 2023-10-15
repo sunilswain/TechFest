@@ -83,4 +83,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
+
+    // Show more/Show less 
+    const table = document.querySelector('.contest-table');
+    const showMoreButton = document.querySelector('.show-button');
+    const maxRows = 13; // Number of rows to show initially
+    let expanded = false;
+
+    function toggleTableRows() {
+        const rows = table.querySelectorAll('tbody tr');
+        const action = expanded ? 'none' : '';
+        let previousScrollTop = 0;
+        for (let i = maxRows; i < rows.length; i++) {
+            rows[i].style.display = action;
+        }
+        
+        expanded = !expanded;
+        showMoreButton.textContent = expanded ? 'Show Less ⬆️' : 'Show More ⬇️';
+        showMoreButton.href = expanded ? '#show-button' : '#contests';
+
+
+    }
+    
+    function collapseTableRows() {
+        const rows = table.querySelectorAll('tbody tr');
+        for (let i = maxRows; i < rows.length; i++) {
+            rows[i].style.display = 'none';
+        }
+    }
+
+    showMoreButton.addEventListener('click', toggleTableRows);
+
+    // Initially, hide rows beyond the maxRows limit
+    collapseTableRows();
 });
