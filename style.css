@@ -49,6 +49,31 @@ html, body {
 		display: none;
 	}
 }
+@media screen and (max-aspect-ratio: 1) {
+	.desktop-content {
+		display: none;
+	}
+	.front-mobile {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+		position: relative;
+		z-index: 100;
+		scroll-behavior: smooth;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+}
+@media screen and (min-aspect-ratio: 1) {
+	.non-desktop-content {
+		display: none;
+	}
+
+}
 nav {
     padding-top: 20px;
     padding-bottom: 20px;
