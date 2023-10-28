@@ -106,6 +106,28 @@ nav > ul > li > a {
 }
 
 /* Headline */
+.headline-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    animation: fadeIn 2s;
+}
+.headline-new h1 {
+    font-size: 140px;
+    margin: 0px;
+    line-height: 1;
+}
+.headline-new h3 {
+    max-width: 400px;
+    margin: 0px;
+    letter-spacing: 1.5px;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .headline {
     display: flex;
     flex-direction: column;
@@ -132,7 +154,6 @@ nav > ul > li > a {
     display: flex;
     justify-content: space-around;
     margin: 30px 40px;
-
 }
 
 .small-cards > h1 {
@@ -148,10 +169,12 @@ nav > ul > li > a {
     box-shadow: var(--blur-border);
     padding: 5px 10px;
     line-height: 1;
-	h1 {
-		letter-spacing: normal;
-	}
+	
 }
+.small-cards div h1 {
+  letter-spacing: normal;
+}
+
 
 /* Contests section */
 .contests {
@@ -184,7 +207,6 @@ nav > ul > li > a {
     flex-direction: column;
     margin: 40px;
     align-items: center;
-    
 }
 .prizes .title {
     font-size: 70px;
@@ -212,7 +234,6 @@ nav > ul > li > a {
     cursor: grab;
     
 }
-
 /* Apply Section */
 .apply {
     margin: 40px;
@@ -233,16 +254,31 @@ nav > ul > li > a {
         .form .user-field {
             position: relative;
         }
-        .form .user-field input {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 30px;
-            border: none;
-            box-shadow: 0 0.2px white;
-            outline: none;
-            background: transparent;
+        .form .user-field {
+            .field {
+                width: 100%;
+                padding: 10px 0px;
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 30px;
+                border: none;
+                box-shadow: 0 0.2px white;
+                outline: none;
+                background: transparent;
+            }
+            
+            .button {
+                padding: 10px 10px;
+                font-size: 16px;
+                color: #fff;
+                border: none;
+                box-shadow: 0 0 0 0.2px white;
+                outline: none;
+                background: transparent;
+            }
+            .button:hover {
+                cursor: pointer;
+            }
         }
         .form .user-field label {
             position: absolute;
